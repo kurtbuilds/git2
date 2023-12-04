@@ -24,6 +24,7 @@ pub enum Command {
     #[clap(visible_alias("i"))]
     Ignore(command::Ignore),
     Reset(command::Reset),
+    Init(command::Init),
 }
 
 fn main() -> anyhow::Result<()> {
@@ -35,5 +36,6 @@ fn main() -> anyhow::Result<()> {
         Status(c) => c.run(),
         Ignore(c) => c.run(),
         Reset(c) => c.run(),
+        Init(c) => c.run(),
     }
 }

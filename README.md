@@ -8,16 +8,25 @@ What it does:
 - *Support stacked diffs (PRs)*: The tool aims to make submitted stacked PRs to Github a simple workflow.
 
 What stays the same:
-- *No command changes*. To the maximum extent, commands are the same or simplified versions of `git` ones.
+- *No name changes*. `git2` removes or simplifies concepts from git, but the basic concepts stay the same (branch, pr, checkout, etc.)
   That means there's minimal learning curve if you already know git.
 - *100% git compatibility*. `git2` is a command line wrapper around `git` itself, so you can always fall back to `git` if you need to.
 
 # Workflow
 
+Here's an example workflow.
+
 ```bash
-git init
+git2 init
 touch README.md
-git2 commit  # You'll have to enter a message
+# Commit the readme. You'll be prompted to enter a message.
+# Unlike git, you don't need to add the file first.
+git2 commit
+# Create a new branch
+git2 checkout -b my-feature 
+echo "print('hello world')" > hello.py
+# Commit the python file
+git2 commit
 ```
 
 # Roadmap
