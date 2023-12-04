@@ -6,6 +6,7 @@ What it does:
 - *No staging*: With no staging, there's also no `add` command. Just commit things. Commands that modify the working directory or staging will first trigger saving
   all changes to the stash, meaning you can entirely forget about the concept of staging.
 - *Support stacked diffs (PRs)*: The tool aims to make submitted stacked PRs to Github a simple workflow.
+- *Linear histories*: git2 encourages linear histories via rebase/rebase --squash.
 
 What stays the same:
 - *No name changes*. `git2` removes or simplifies concepts from git, but the basic concepts stay the same (branch, pr, checkout, etc.)
@@ -31,11 +32,13 @@ git2 commit
 
 # Roadmap
 
-- [ ] git2 pull needs to stash before running.
+- [ ] git2 pull needs to stash before running. pull --rebase --autostash
 - [ ] git2 pr to create a pull request.
 - [ ] git2 pr is smart enough to stack diffs.
 - [ ] Find a way to make resolving merge conflicts in stacked diffs easier.
 - [ ] git2 merge does a rebase merge.
 - [ ] git2 squash does a rebase --squash merge.
+- [ ] git2 push should pass in configuration `-c push.autoSetupRemote = true`
+- [ ] git2 clone should be clone --recurse-submodules
 
 I think if we do rebase & --squash, we'll also want a way to update stacked PRs and whatnot.
