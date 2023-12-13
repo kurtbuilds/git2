@@ -49,6 +49,10 @@ pub struct GitCommand {
 }
 
 impl GitCommand {
+    pub fn args(args: Vec<String>) -> Self {
+        Self { args }
+    }
+
     pub fn new(command: &str) -> Self {
         Self {
             args: vec![command.to_string()],
@@ -64,7 +68,7 @@ impl GitCommand {
         let mut c =
             std::process::Command::new("git");
         c.args(&self.args);
-            // .current_dir(git_root());
+        // .current_dir(git_root());
         c
     }
 
@@ -81,7 +85,7 @@ impl GitCommand {
         let status = self.exec()
             .status()?;
         if !status.success() {
-            anyhow::bail!("Failed to run git: {:?}", status);
+            anyhow::bail!("git2 failed to run git: {:?}", status);
         }
         Ok(())
     }
