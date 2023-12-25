@@ -11,3 +11,4 @@ mod status;
 mod ignore;
 mod reset;
 mod init;
+mod pr;

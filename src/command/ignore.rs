@@ -11,7 +11,7 @@ pub struct Ignore {
 }
 
 impl Ignore {
-    pub fn run(&self) -> anyhow::Result<()> {
+    pub fn run(self) -> anyhow::Result<()> {
         let path = git_root();
         let mut file = fs::File::options()
             .create(true)

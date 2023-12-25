@@ -3,6 +3,8 @@ use crate::util::GitCommand;
 
 mod command;
 mod util;
+mod prelude;
+
 
 #[derive(Parser, Debug)]
 #[command(author, version, about)]

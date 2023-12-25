@@ -8,7 +8,7 @@ pub struct Reset {
 }
 
 impl Reset {
-    pub fn run(&self) -> anyhow::Result<()> {
+    pub fn run(self) -> anyhow::Result<()> {
         let mut c = GitCommand::new("reset")
             .arg("--hard");
         if let Some(ref_name) = &self.ref_name {

@@ -8,10 +8,10 @@ pub struct Commit {
 }
 
 impl Commit {
-    pub fn run(&self) -> anyhow::Result<()> {
+    pub fn run(self) -> anyhow::Result<()> {
         let mut c = GitCommand::new("add");
         for path in &self.paths {
-            c = c.arg(path);
+            c = c.arg(&path);
         }
         if self.paths.is_empty() {
             let path = git_root().to_str().unwrap();

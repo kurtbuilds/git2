@@ -6,7 +6,7 @@ use crate::util::GitCommand;
 pub struct Status {}
 
 impl Status {
-    pub fn run(&self) -> anyhow::Result<()> {
+    pub fn run(self) -> anyhow::Result<()> {
         GitCommand::new("status")
             .status()?;
         Ok(())

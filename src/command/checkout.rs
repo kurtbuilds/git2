@@ -37,7 +37,7 @@ fn find_number_in_stash_output(output: &str, filter: &str) -> Option<String> {
 }
 
 impl Checkout {
-    pub fn run(&self) -> Result<()> {
+    pub fn run(self) -> Result<()> {
         // git command to unstage everything
         // $ git reset HEAD -- .
         let stash_name = {

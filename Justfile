@@ -6,3 +6,6 @@ install:
 
 run *ARGS:
     cargo run -- "@$"
+
+check:
+    cargo check
